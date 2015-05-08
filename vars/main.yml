@@ -1,2 +1,6 @@
 ---
 # vars file for lxd
+
+lxd_packages:
+  - lxd
+lxd_service_name: lxd

@@ -1,2 +1,18 @@
 ---
 # tasks file for lxd
+
+- name: Include distribution specific variables
+  include_vars: "{{ ansible_distribution }}.yml"
+  tags: lxd
+
+- include: CentOS.yml
+  when: ansible_distribution == "CentOS"
+  tags: lxd
+
+- include: Ubuntu.yml
+  when: ansible_distribution == "Ubuntu"
+  tags: lxd
+
+- name: Ensure LXD service is started and enabled on boot
+  service: name={{ lxd_service_name }} state=started enabled=yes
+  tags: lxd

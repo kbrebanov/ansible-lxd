@@ -1,0 +1,13 @@
+---
+# tasks file for lxd (Ubuntu specific)
+
+- name: Add LXD PPA
+  apt_repository: >
+    repo='ppa:ubuntu-lxc/lxd-stable'
+    state=present
+  tags: lxd
+
+- name: Install LXD packages
+  apt: name={{ item }} state=present update_cache=yes
+  with_items: lxd_packages
+  tags: lxd
