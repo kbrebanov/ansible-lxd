@@ -1,7 +1,7 @@
 lxd
 ===
 
-[![Ansible Role](https://img.shields.io/ansible/role/3711.svg)](https://galaxy.ansible.com/list#/roles/3711)
+[![Build Status](https://travis-ci.org/kbrebanov/ansible-lxd.svg?branch=master)](https://travis-ci.org/kbrebanov/ansible-lxd)
 
 Installs LXD.
 
